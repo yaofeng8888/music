@@ -1,0 +1,8 @@
+<!--pages/index/index.wxml-->
+<view class="indexContainer">
+  <image class="avatUrl" src="/static/images/meimei"></image>
+  <text class="userName">{{userName}}</text>
+  <view class="start">
+  <text>{{message}}</text>
+  </view>
+</view>
