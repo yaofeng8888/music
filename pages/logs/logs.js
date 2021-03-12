@@ -1,36 +1,25 @@
-// pages/index/index.js
-import request from '../utils/request'
+// pages/logs/logs.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-   banner:[],
-   recommendList:[]
+
   },
 
-  
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad:async function (options) {
-    let result = await request("/banner",{type:2})
-    this.setData({
-      banner:result.banners
-    })
-    let recommendListData = await request("/personalized",{limit:5})
-    this.setData({
-      recommendList:recommendListData.result
-    })
-  },
+  onLoad: function (options) {
 
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**

@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/logs/logs"
   ],
-  "window":{
-    "navigationBarBackgroundColor": "#DC143C",
-    "navigationBarTextStyle": "black",
+  "window": {
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "网易云音乐"
-  }
+  },
+  "sitemapLocation": "sitemap36.json"
 }
