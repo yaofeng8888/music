@@ -1,48 +1,25 @@
-// pages/index/index.js
-import request from '../../utils/request'
+// pages/video/video.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-   banner:[],
-   recommendList:[],
-   topList:[]
+
   },
 
-  
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad:async function (options) {
-    let result = await request("/banner",{type:2})
-    this.setData({
-      banner:result.banners
-    })
-    let recommendListData = await request("/personalized",{limit:5})
-    this.setData({
-      recommendList:recommendListData.result
-    })
+  onLoad: function (options) {
 
-    let resutArray=[]
-    for (let index = 1; index < 6; index++) {
-      let topListData =  await request("/top/list",{idx:index})
-      let topItem={
-        name:topListData.playlist.name,
-        tracks:topListData.playlist.tracks.slice(0,3)
-      }
-      resutArray.push(topItem)
-      this.setData({
-        topList:resutArray
-       })
-    }
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
