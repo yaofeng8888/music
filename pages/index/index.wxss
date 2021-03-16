@@ -34,23 +34,11 @@ height: 300rpx;
 .recomdContainer{
   padding: 20rpx;
 }
-.recomdContainer .header .title{
-  font-size: 32rpx;
-  line-height: 80rpx;
-  color: #666;
-}
-
-.recomdContainer .header .more{
-  float: right;
-  border: 1rpx solid #333;
-  padding: 10rpx 20rpx;
-  font-size: 24rpx;
-  border-radius: 30rpx;
-}
 
 /* 推荐内容区 */
 .recomdScroll{
   display: flex;
+  height: 300rpx;
 }
 .scrollItem {
   width: 200rpx;
@@ -76,4 +64,46 @@ height: 300rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;*/
+}
+
+.topList{
+  padding: 20rpx;
+}
+
+.topItem{
+width: 96%;
+background-color: #fbfbfb;
+}
+
+.topItem .title{
+font-size: 30rpx;
+line-height: 80rpx;
+}
+.topListSwiper{
+  height: 400rpx;
+}
+.musicItem {
+  /* 当一个元素设置为flex  其子元素自动成为block元素 */
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.musicItem image{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 6rpx;
+}
+
+.musicItem .count{
+  height: 100rpx;
+  width: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.musicItem .musicName{
+  height: 100rpx;
+  line-height: 100rpx;
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

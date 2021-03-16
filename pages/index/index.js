@@ -7,7 +7,8 @@ Page({
    */
   data: {
    banner:[],
-   recommendList:[]
+   recommendList:[],
+   topList:[]
   },
 
   
@@ -23,9 +24,20 @@ Page({
     this.setData({
       recommendList:recommendListData.result
     })
+
+    let resutArray=[]
+    for (let index = 1; index < 6; index++) {
+      let topListData =  await request("/top/list",{idx:index})
+      let topItem={
+        name:topListData.playlist.name,
+        tracks:topListData.playlist.tracks.slice(0,3)
+      }
+      resutArray.push(topItem)
+      this.setData({
+        topList:resutArray
+       })
+    }
   },
-
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
