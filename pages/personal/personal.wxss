@@ -211,3 +211,19 @@
 .cardList .card-item .more {
   float: right;
 }
+
+/* 最近播放记录 */
+.recordList{
+display: flex;
+height: 200rpx;
+}
+
+.recordItem{
+  margin-right:20rpx;
+}
+
+.recordItem image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}

@@ -1,4 +1,5 @@
 // pages/personal/personal.js
+import request from '../../utils/request'
 let startY = 0;
 let moveY  = 0;
 let moveDistace = 0;
@@ -9,21 +10,42 @@ Page({
    */
   data: {
     coverTransform: 'translateY(0)',
-    coverTranstion: ''
+    coverTranstion: '',
+    userInfo:{},
+    pageList:[]
   },
-
+  toLogin(){
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let user = wx.getStorageSync('userInfo')
+    if(user){
+      this.setData({
+        userInfo:JSON.parse(user)
+      })
+      this.getUserRecord(this.data.userInfo.userId)
+    }
   },
-
+   async getUserRecord(userId){
+      let list = await request("/user/record",{uid: userId,type:0})
+      let index = 0;
+      let pageList  =list.allData.splice(0,10).map(item=>{
+        item.id=index++;
+        return item;
+      })
+      this.setData({
+        pageList
+      })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

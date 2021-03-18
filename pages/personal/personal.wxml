@@ -3,11 +3,11 @@
   <view class="user-section">
     <image class="bg" src="/static/images/personal/bgImg2.jpg"></image>
     <view class="user-info-box">
-      <view class="portrait-box">
-        <image class="portrait" src='/static/images/personal/missing-face.png'></image>
+      <view class="portrait-box"  bindtap="toLogin">
+        <image class="portrait" src="{{userInfo.avatarUrl}}"></image>
       </view>
       <view class="info-box">
-        <text class="username">游客</text>
+        <text class="username">{{userInfo.nickname}}</text>
       </view>
     </view>
 
@@ -59,6 +59,11 @@
       <view class="recentPlayContainer">
         <text class="title">最近播放</text>
         <!-- 最近播放记录 -->
+        <scroll-view scroll-x class="recordList" enable-flex>
+          <view class="recordItem" wx:for="{{pageList}}" wx:key="id">
+          <image src="{{item.song.al.picUrl}}"></image>
+          </view>
+        </scroll-view>
       </view>
 
       <view class="cardList">
